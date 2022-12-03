@@ -18,7 +18,7 @@ async function broadcastTxn() {
         jwt: testJWT,
 
         // demo contract entries
-        toContractId: 'acatyaigERaHXCBzVdopQyorj1TVDm8KMjVxFOH-QHA',
+        toContractId: 'IRnA9kRCjIg4kG32N2VTTYxi5AYqRyJflDgJk-DMJy4',
         toContractFunction: 'createPost', 
         txnData: {title: 'Hello World!', content: 'Oh yeah blah blah blah', id: uuid()}
     })
