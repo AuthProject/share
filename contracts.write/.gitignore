@@ -3,6 +3,7 @@
 # warp
 testwallet.json
 transactionid.js
+.cache
 
 
 # dependencies
