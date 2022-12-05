@@ -18,5 +18,8 @@
     "react-markdown": "^8.0.3",
     "uuid": "^9.0.0",
     "warp-contracts": "^1.2.29"
+  },
+  "devDependencies": {
+    "arlocal": "^1.1.59"
   }
 }

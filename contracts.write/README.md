@@ -1,9 +1,16 @@
 # install
 npm install
 
-# deploy contract
-(/warp)
+# contract A
+cd contractA
 node deploy
-
-# make txn
 node broadcastTxn.js
+
+# contract B
+cd contractB
+node deploy
+node broadcastTxn.js
+
+# read
+cd warp-configs
+node read.js

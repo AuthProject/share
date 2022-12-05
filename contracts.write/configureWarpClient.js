@@ -3,9 +3,7 @@ import { transactionId } from './transactionid'
 import wallet from './testwallet'
 
 
-
-// declare enviroment, defaults to testnet
-const environment = process.env.NEXT_PUBLIC_WARPENV || 'mainnet'
+const environment = 'mainnet'
 let warp
 let contract
 
@@ -13,7 +11,7 @@ let contract
 async function getContract() {
   if (environment == 'testnet') { // if testnet
     warp = WarpFactory.forTestnet()
-    contract = warp.contract(transactionId).connect(wallet)
+    contract = warp.contract(transactionId).setEvaluationOptions({internalWrites: true}).connect(wallet)
   } else if (environment === 'mainnet') { // if mainnet
     warp = WarpFactory.forMainnet()
     // can use something like ar connect if you dont at JWK in .connect()

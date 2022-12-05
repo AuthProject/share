@@ -21,7 +21,7 @@ async function configureWallet() {
         // spoof brand new wallet
         const { jwk } = await warp.generateWallet()
         // add it to local file system
-        fs.writeFileSync('../testwallet.json', JSON.stringify(jwk))
+        fs.writeFileSync('../warp-configs/testwallet.json', JSON.stringify(jwk))
         // return their newly generate wallet
         return jwk
     } catch (err) {

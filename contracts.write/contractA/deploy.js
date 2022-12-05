@@ -1,6 +1,6 @@
 import * as fs from 'fs';
-import { configureWallet, warp } from './configureWarpServer.js'
-import { testJWT } from '../testJWT.js'
+import { configureWallet, warp } from '../warp-configs/configureWarpServer.js'
+import { testJWT } from '../warp-configs/testJWT.js'
 
 
 async function deploy() {
@@ -18,10 +18,10 @@ async function deploy() {
     })
 
 
-    fs.writeFileSync('../transactionid.js', `export const transactionId = "${contractTxId}"`)
+    fs.writeFileSync('./transactionid.js', `export const transactionId = "${contractTxId}"`)
 
 
-    const contract = warp.contract(contractTxId).connect(wallet)
+    const contract = warp.contract(contractTxId).setEvaluationOptions({internalWrites: true}).connect(wallet)
     // initialize contract
     await contract.writeInteraction({
         function: 'initializeContract', 
