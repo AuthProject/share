@@ -15,7 +15,7 @@ async function deploy() {
 
   const contract = warp.contract(contractTxId).setEvaluationOptions({internalWrites: true}).connect(wallet)
   await contract.writeInteraction({
-    function: 'initialize'
+    function: 'initializeContract'
   })
 
   console.log('contractTxId: ', 'https://sonar.warp.cc/#/app/contract/' + contractTxId)

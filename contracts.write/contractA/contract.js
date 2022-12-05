@@ -1,5 +1,4 @@
 export async function handle(state, action) {
-
     const contractInput = action.input
 
 
@@ -18,13 +17,14 @@ export async function handle(state, action) {
         const txnData = contractInput.txnData;
 
         // interact with other contract
-        await SmartWeave.contracts.write(toContractId, { function: toContractFunction, txnData: txnData });
-
-
+        await SmartWeave.contracts.write(toContractId, { 
+            function: toContractFunction, 
+            txnData: txnData }); 
     }
 
     
-    return { state }
+
+    return { state };
 }
 
 

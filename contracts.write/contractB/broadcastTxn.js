@@ -8,8 +8,8 @@ async function createPost() {
   await contract.writeInteraction({
     function: "createPost",
     txnData: {
-      title: "THIS IS THE GENERIC DEPLOY",
-      content: "THIS IS THE GENERIC DEPLOY",
+      title: "IGNORE THIS POST",
+      content: "IGNORE THIS POST",
     }
   })
 

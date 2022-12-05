@@ -9,7 +9,9 @@ import { transactionId as contractATransactionId } from '../contractB/transactio
 async function broadcastTxn() {
 
     let wallet = await configureWallet()
-    const contract = warp.contract(transactionId).setEvaluationOptions({internalWrites: true}).connect(wallet)
+    const contract = warp.contract(transactionId).setEvaluationOptions({
+        internalWrites: true,
+    }).connect(wallet)
 
     // send to the contract, demo make a post
     // we are the client here
@@ -22,7 +24,7 @@ async function broadcastTxn() {
         // demo contract entries
         toContractId: contractATransactionId,
         toContractFunction: 'createPost', 
-        txnData: {title: 'Hello World!', content: 'Oh yeah blah blah blah'}
+        txnData: {title: 'Hello World!', content: 'Hello World!'}
     })
 
 
